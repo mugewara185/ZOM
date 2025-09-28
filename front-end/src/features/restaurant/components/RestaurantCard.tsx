@@ -7,7 +7,7 @@ const RestaurantCard = ({ id, name, image, location, cuisines, rating }: Restaur
 
   return (
     <div
-      className="bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer"
+      className="bg-white/0 rounded-xl shadow hover:shadow-lg transition cursor-pointer"
       onClick={() => navigate(`/restaurant/${id}`)}
     >
       <img
