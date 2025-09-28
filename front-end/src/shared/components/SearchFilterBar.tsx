@@ -18,20 +18,21 @@ export const SearchFilterBar = ({ onFilter }: Props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row gap-4 mb-6 sticky top-16 z-0 bg-gray-50 p-2 rounded-lg"
+    //   className="flex flex-col sm:flex-row gap-4 mb-6 sticky top-16 z-0 bg-gray-50 p-2 rounded-lg bg-white/20"
+      className="flex flex-col sm:flex-row gap-4 mb-6 z-0 bg-gray-50 p-2 rounded-lg bg-white/20"
     >
       <input
         type="text"
         placeholder="Search restaurants..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="flex-1 px-4 py-2 border rounded bg-white/90"
+        className="flex-1 px-4 py-2 border rounded bg-gray-500"
       />
 
       <select
         value={location}
         onChange={(e) => setLocation(e.target.value)}
-        className="flex-1 px-4 py-2 border rounded bg-white/90"
+        className="flex-1 px-4 py-2 border rounded bg-white/20"
       >
         <option value="">All Locations</option>
         <option value="Chennai">Chennai</option>
@@ -44,7 +45,7 @@ export const SearchFilterBar = ({ onFilter }: Props) => {
       <select
         value={cuisine}
         onChange={(e) => setCuisine(e.target.value)}
-        className="px-4 py-2 border rounded bg-white/90"
+        className="px-4 py-2 border rounded bg-white/20"
       >
         <option value="">All Cuisines</option>
         <option value="South Indian">South Indian</option>

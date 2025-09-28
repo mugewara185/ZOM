@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { restaurants as allRestaurants } from "@/features/restaurant/data/restaurants";
 import {SearchFilterBar}  from "@/shared/components/SearchFilterBar";
 import RestaurantCard from "@/features/restaurant/components/RestaurantCard";
+import Hero from "./Hero";
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -32,7 +33,7 @@ const Home = () => {
           setCuisine(c);
         }}
       />
-
+        <Hero/>
       {/* Section heading */}
       <h2 className="text-2xl font-bold mb-4">Popular Restaurants</h2>
 
@@ -67,8 +68,7 @@ const Home = () => {
         )}
       </div>
 
-      {/* placeholder bottom section */}
-      <div className="mt-5 min-h-40 bg-gray-800"></div>
+        {/* <Hero/> */}
     </div>
   );
 };
