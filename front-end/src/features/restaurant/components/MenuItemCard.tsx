@@ -8,7 +8,7 @@ type Props = {
 
 export const MenuItemCard = ({ item, onAdd }: Props) => {
   return (
-    <div className="flex justify-between items-start p-4 border rounded-lg shadow-sm bg-white">
+    <div className="flex justify-between items-start p-4 border rounded-lg shadow-sm bg-white/20">
       <div className="flex-1">
         <h3 className="font-semibold text-lg">{item.name}</h3>
         <p className="text-sm text-gray-500">{item.description}</p>
