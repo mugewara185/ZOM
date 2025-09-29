@@ -15,7 +15,7 @@ const MainLayout = () => {
           isSideNavOpen ? "ml-40" : "ml-14"
         }`}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         <main className="p-4">
           <Outlet />
         </main>
