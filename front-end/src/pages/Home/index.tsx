@@ -1,6 +1,8 @@
-// src/pages/Home/index.tsx
+//Home/index.tsx
 import { useState, useMemo } from "react";
-import { restaurants as allRestaurants } from "@/features/restaurant/data/restaurants";
+//datas:
+import { restaurants as allRestaurants } from "@/data/dummyData";
+//components:
 import {SearchFilterBar}  from "@/shared/components/SearchFilterBar";
 import RestaurantCard from "@/features/restaurant/components/RestaurantCard";
 import Hero from "./Hero";
@@ -11,7 +13,7 @@ const Home = () => {
   const [cuisine, setCuisine] = useState("");
   const [flatScroll, setFlatScroll] = useState(true);
 
-  // 🔥 Filtering logic with useMemo (performance + Redux-ready later)
+  // Filtering logic with useMemo (performance + Redux-ready later)
   const filtered = useMemo(() => {
     return allRestaurants.filter((r) => {
       const matchQuery = r.name.toLowerCase().includes(query.toLowerCase());
@@ -25,6 +27,7 @@ const Home = () => {
 
   return (
     <div className="p-4 max-w-6xl mx-auto">
+      <Hero/>
       {/* Filters */}
       <SearchFilterBar
         onFilter={(q, l, c) => {
@@ -33,7 +36,6 @@ const Home = () => {
           setCuisine(c);
         }}
       />
-        <Hero/>
       {/* Section heading */}
       <h2 className="text-2xl font-bold mb-4">Popular Restaurants</h2>
 

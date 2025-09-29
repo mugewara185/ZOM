@@ -19,7 +19,7 @@ export const generateRestaurants = (count = 60): Restaurant[] =>
     location: locations[i % locations.length],
     cuisines: cuisinesList[i % cuisinesList.length],
     rating: parseFloat((Math.random() * 2 + 3).toFixed(1)),
-    image: `/assets/restaurants/restaurant${(i % 10) + 1}.jpg`,
+    image: `../src/assets/restaurants/restaurant${(i % 10) + 1}.jpg`,
   }));
 
 export const restaurants = generateRestaurants();

@@ -10,7 +10,7 @@ export const generateMenus = (): MenuItem[] =>
       name: faker.commerce.productName(),
       description: faker.lorem.sentence(),
       price: faker.number.int({ min: 50, max: 500 }),
-      image: `/assets/foods/food${(i % 10) + 1}.jpg`,
+      image: `../src/assets/restaurants/restaurant${(i % 10) + 1}.jpg`,
       isVeg: faker.datatype.boolean(),
     }))
   );

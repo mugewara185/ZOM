@@ -1,4 +1,4 @@
-import type{ Restaurant } from "./types"
+import type{ Restaurant } from "../types"
 import { restaurantNames } from "./dummyData"
 
 export const restaurants: Restaurant[]= Array.from({length:60}).map((_, i)=>({
