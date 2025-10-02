@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import authReducer from "./slices/authSlice";
-import cartReducer from "./slices/cartSlice";
-import restaurantReducer from "./slices/restaurantSlice";
-import menuReducer from "./slices/menuSlice";
-import orderReducer from "./slices/orderSlice";
-import reviewReducer from "./slices/reviewSlice";
+import authReducer from "@/features/auth/authSlice";
+import cartReducer from "@/features/cart/cartSlice";
+import restaurantReducer from "@/features/restaurant/restaurantSlice";
+import menuReducer from "@/features/menu/menuSlice";
+import orderReducer from "@/features/orders/orderSlice";
+import reviewReducer from "@/features/reviews/reviewSlice";
 import rootSaga from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
