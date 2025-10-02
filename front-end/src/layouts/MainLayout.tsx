@@ -8,15 +8,14 @@ const MainLayout = () => {
 
   return (
     <div className="flex">
-        hi
       <SideNav />
       <div
         className={`flex flex-col flex-grow transition-all ${
           isSideNavOpen ? "ml-40" : "ml-14"
         }`}
       >
-        {/* <Navbar /> */}
-        <main className="p-4">
+        <Navbar />
+        <main className="p-4 justify-center">
           <Outlet />
         </main>
       </div>
