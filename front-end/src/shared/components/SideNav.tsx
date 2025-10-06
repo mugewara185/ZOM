@@ -9,7 +9,7 @@ const SideNav = () => {
   return (
     <aside
       className={cn(
-        "h-screen bg-white dark:bg-gray-900 shadow-md transition-all fixed top-0 left-0 z-40",
+        "h-screen bg-white dark:bg-gray-900 shadow-md transition-all fixed top-12 left-0 z-40",
         isSideNavOpen ? "w-40" : "w-14"
       )}
     >

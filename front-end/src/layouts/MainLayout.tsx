@@ -15,7 +15,7 @@ const MainLayout = () => {
         }`}
       >
         <Navbar />
-        <main className="p-4 justify-center">
+        <main className="p-4 pt-16 justify-center ">
           <Outlet />
         </main>
       </div>
