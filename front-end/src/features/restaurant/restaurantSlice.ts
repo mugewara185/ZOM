@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type{ PayloadAction } from "@reduxjs/toolkit";
 import type { Restaurant } from "@/data/types";
 
-type RestaurantState = {
+export type RestaurantState = {
   items: Restaurant[];
   loading: boolean;
   error: string | null;
