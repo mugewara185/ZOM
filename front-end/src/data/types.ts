@@ -34,6 +34,8 @@ export type Cart = {
 
 export type User = {
   id: string;
+  password?: string;
+  role?: string;
   name: string;
   email: string;
   avatar?: string;

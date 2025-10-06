@@ -12,9 +12,9 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <ThemeProvider>
         <UIProvider>
-          {/* <AppProvider> */}
+          <AppProvider>
             <App />
-          {/* </AppProvider> */}
+          </AppProvider>
         </UIProvider>
       </ThemeProvider>
     </BrowserRouter>
