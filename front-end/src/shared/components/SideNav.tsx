@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useUI } from "../../app/providers/UIProvider";
 import { navLinks } from "@/config/navigation"
 import { cn } from "../../utils/cn";
-import {ChevronLeft, ChevronRight} from "lucide-react"
+import {SidebarClose, PanelLeftOpen,} from "lucide-react"
 
 const SideNav = () => {
   const { sideNavTog, setSideNavTog  } = useUI();
@@ -16,9 +16,9 @@ const SideNav = () => {
     >
       <nav className="flex flex-col mt-6 gap-4">
         <div
-          onClick={setSideNavTog}
-          className={sideNavTog ? `bg-blue-800/10 flex justify-end` : 'flex justify-center' + ``}
-        >{sideNavTog ? <ChevronLeft/> : <ChevronRight/>}
+          onClick={setSideNavTog} // to add sliding animation for toggle icon
+          className={cn(sideNavTog ? `bg-blue-800/10 flex justify-end` : 'flex justify-start ml-1' ,`text-blue-700/40 transition-transform duration-300 hover:scale-104 hover:text-blue-700/90`)}
+        >{sideNavTog ? <SidebarClose /> : <PanelLeftOpen/>}
         </div>
 
         {navLinks.map(({ id, label, path, icon: Icon }) => (
