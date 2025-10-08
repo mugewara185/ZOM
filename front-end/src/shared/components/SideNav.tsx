@@ -2,18 +2,25 @@ import { NavLink } from "react-router-dom";
 import { useUI } from "../../app/providers/UIProvider";
 import { navLinks } from "@/config/navigation"
 import { cn } from "../../utils/cn";
+import {ChevronLeft, ChevronRight} from "lucide-react"
 
 const SideNav = () => {
-  const { isSideNavOpen } = useUI();
+  const { sideNavTog, setSideNavTog  } = useUI();
 
   return (
     <aside
       className={cn(
         "h-screen bg-white dark:bg-gray-900 shadow-md transition-all fixed top-12 left-0 z-40",
-        isSideNavOpen ? "w-40" : "w-14"
+        sideNavTog ? "w-40" : "w-14"
       )}
     >
       <nav className="flex flex-col mt-6 gap-4">
+        <div
+          onClick={setSideNavTog}
+          className={sideNavTog ? `bg-blue-800/10 flex justify-end` : 'flex justify-center' + ``}
+        >{sideNavTog ? <ChevronLeft/> : <ChevronRight/>}
+        </div>
+
         {navLinks.map(({ id, label, path, icon: Icon }) => (
           <NavLink
             key={id}
@@ -26,7 +33,7 @@ const SideNav = () => {
             }
           >
             <Icon className="w-5 h-5" />
-            {isSideNavOpen && <span className="whitespace-nowrap">{label}</span>}
+            {sideNavTog && <span className="whitespace-nowrap">{label}</span>}
           </NavLink>
         ))}
       </nav>

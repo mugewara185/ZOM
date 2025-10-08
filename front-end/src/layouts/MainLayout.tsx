@@ -4,18 +4,17 @@ import SideNav from "../shared/components/SideNav";
 import { useUI } from "../app/providers/UIProvider";
 
 const MainLayout = () => {
-  const { isSideNavOpen } = useUI();
+  const { isSideNavOpen, sideNavTog } = useUI();
 
   return (
     <div className="flex">
-      <SideNav />
+      {isSideNavOpen && <SideNav />}
       <div
         className={`flex flex-col flex-grow transition-all ${
-          isSideNavOpen ? "ml-40" : "ml-14"
-        }`}
+          (isSideNavOpen && sideNavTog) ? "ml-40" : (isSideNavOpen && !sideNavTog) ? "ml-14" : ''} `}
       >
         <Navbar />
-        <main className="p-4 pt-16 justify-center ">
+        <main className="pt-16 justify-center ">
           <Outlet />
         </main>
       </div>

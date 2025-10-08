@@ -3,16 +3,20 @@ import type{ReactNode} from 'react';
 
 type UIContextType={
     isSideNavOpen:boolean;
-    toggleSideNav:()=>void;
+    sideNavTog:boolean;
+    setSideNavTog: ()=>void;
+    setSideNavOpen:()=>void;
 }
 const UIContext= createContext<UIContextType | undefined>(undefined);
 
 export const UIProvider= ({children}:{children:ReactNode})=>{
     const [isSideNavOpen, setIsSideNavopen]= useState(true);
-    const toggleSideNav=()=>setIsSideNavopen(prev=>!prev);
+    const setSideNavOpen=()=> setIsSideNavopen(prev=> !prev);
+    const [sideNavTog, setsideNavTog]= useState(true);
+    const setSideNavTog=()=>setsideNavTog(prev=>!prev);
 
     return(
-        <UIContext.Provider value={{isSideNavOpen, toggleSideNav}}>
+        <UIContext.Provider value={{isSideNavOpen, setSideNavOpen, sideNavTog, setSideNavTog, }}>
             {children}
         </UIContext.Provider>
     )
