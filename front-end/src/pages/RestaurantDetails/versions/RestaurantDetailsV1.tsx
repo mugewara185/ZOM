@@ -5,6 +5,7 @@ import { restaurants, menus, reviews } from "@/data/dummyData";
 import { RestaurantHeader } from "@/features/restaurant/components/RestaurantHeader";
 import { MenuItemCard } from "@/features/restaurant/components/MenuItemCard";
 import type { MenuItem, CartItem } from "@/data/types";
+import { logger } from "@/utils/logger";
 
 const LOCAL_CART_KEY = "miniZomCart";
 
@@ -22,6 +23,7 @@ function writeCart(cart: CartItem[]) {
 }
 
 const RestaurantDetailsV1: React.FC = () => {
+    // logger.log('!--------------------------------<RestuarantDetailsV1>--------------------------------!')
   const { id } = useParams<{ id: string }>();
   const restaurant = restaurants.find((r) => r.id === id);
   const items = menus.filter((m) => m.restaurantId === id);

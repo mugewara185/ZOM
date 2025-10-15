@@ -7,9 +7,9 @@ const index = () => {
 logger.log(`!--------------------------------<${RestaurantDetails_V.name}>--------------------------------!`)
   
   return (
-    <div>
+    // <div>
       <RestaurantDetails_V/>
-    </div>
+    // </div>
   )
 }
 

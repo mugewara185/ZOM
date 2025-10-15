@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { users } from "@/data/dummyData";
-import { useAppDispatch } from "@/app/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { loginRequest } from "@/features/auth/authSlice";
 
 const KEY_USER = "miniZomUser";

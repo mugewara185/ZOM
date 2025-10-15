@@ -1,20 +1,21 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useUI } from "@/app/providers/UIProvider";
+import type { CartItem } from "@/data/types";
 
 const LOCAL_CART_KEY = "miniZomCart";
 
 const Navbar: React.FC = () => {
   const [count, setCount] = useState(0);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const {setSideNavOpen} = useUI();
 
   useEffect(() => {
     function updateCartCount() {
       try {
         const cart = JSON.parse(localStorage.getItem(LOCAL_CART_KEY) || "[]");
-        setCount(cart.reduce((sum: number, item: any) => sum + (item.quantity || 0), 0));
+        setCount(cart.reduce((sum: number, item: CartItem) => sum + (item.quantity || 0), 0));
       } catch {
         setCount(0);
       }
@@ -26,19 +27,19 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+    <nav className="bg-gray-200 shadow-md fixed top-0 w-full z-50 transition-all">
+      <div className="mx-auto px-6 py-3 flex items-center justify-between">
         {/* Left: Logo + Navigation Links */}
-        <div className="flex items-center gap-6">
+        <div className="flex gap-6">
           <button
             // onClick={() => navigate("/")}
             onClick={() => setSideNavOpen()}
             className="text-2xl font-bold text-red-600 hover:text-red-700 transition"
           >
-            🍽 Mini Zomato
+            🍽 ZOM
           </button>
-          <div className="hidden md:flex items-center gap-4">
-            {/* <Link
+          {/* <div className="hidden md:flex items-center gap-4">
+            <Link
               to="/"
               className="text-gray-700 font-medium hover:text-red-600 transition"
             >
@@ -49,12 +50,12 @@ const Navbar: React.FC = () => {
               className="text-gray-700 font-medium hover:text-red-600 transition"
             >
               Orders
-            </Link> */}
-          </div>
+            </Link>
+          </div> */}
         </div>
 
         {/* Right: Login + Cart */}
-        <div className="flex items-center gap-4">
+        <div className="flex justify-end gap-4">
           <Link
             to="/login"
             className="hidden sm:inline text-gray-700 font-medium hover:text-red-600 transition"

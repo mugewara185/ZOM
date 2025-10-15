@@ -18,11 +18,11 @@ export const SearchFilterBar: React.FC<Props> = ({ onFilter }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="sticky top-16 z-30 bg-white/80 backdrop-blur-md shadow-md rounded-sm p-4 mb-8 flex flex-col sm:flex-row items-center gap-4 transition-all"
+      className="sticky top-20 z-30 bg-white/80 backdrop-blur-md shadow-md rounded-xl p-4 mb-8 flex flex-col sm:flex-row items-center gap-4 transition-all"
     >
       {/* Search box */}
-      <div className="flex items-center gap-2 w-full sm:w-1/3 border rounded-lg px-3 py-2 bg-gray-400/50 text-black shadow-sm">
-        <Search className="text-gray-200 w-4 h-4" />
+      <div className="flex items-center gap-2 w-full sm:w-1/3 border rounded-lg px-3 py-2 bg-white shadow-sm">
+        <Search className="text-gray-400 w-4 h-4" />
         <input
           type="text"
           placeholder="Search restaurant or dish..."
@@ -33,7 +33,7 @@ export const SearchFilterBar: React.FC<Props> = ({ onFilter }) => {
       </div>
 
       {/* Location */}
-      <div className="flex items-center gap-2 w-full sm:w-1/3 border rounded-lg px-3 py-2 bg-gray-400/50 text-black shadow-sm">
+      <div className="flex items-center gap-2 w-full sm:w-1/3 border rounded-lg px-3 py-2 bg-white shadow-sm">
         <MapPin className="text-gray-400 w-4 h-4" />
         <input
           type="text"
@@ -45,7 +45,7 @@ export const SearchFilterBar: React.FC<Props> = ({ onFilter }) => {
       </div>
 
       {/* Cuisine */}
-      <div className="flex items-center gap-2 w-full sm:w-1/3 border rounded-lg px-3 py-2 bg-gray-400/50 text-black shadow-sm">
+      <div className="flex items-center gap-2 w-full sm:w-1/3 border rounded-lg px-3 py-2 bg-white shadow-sm">
         <Utensils className="text-gray-400 w-4 h-4" />
         <input
           type="text"

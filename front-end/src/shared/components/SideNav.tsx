@@ -17,7 +17,7 @@ const SideNav = () => {
       <nav className="flex flex-col mt-6 gap-4">
         <div
           onClick={setSideNavTog} // to add sliding animation for toggle icon
-          className={cn(sideNavTog ? `bg-blue-800/10 flex justify-end` : 'flex justify-start ml-1' ,`text-blue-700/40 transition-transform duration-300 hover:scale-104 hover:text-blue-700/90`)}
+          className={cn(sideNavTog ? `bg-gray-800/10 flex justify-end` : 'flex justify-start ml-1' ,`text-blue-700/40 transition-transform duration-300 hover:scale-104 hover:text-blue-700/90`)}
         >{sideNavTog ? <SidebarClose /> : <PanelLeftOpen/>}
         </div>
 

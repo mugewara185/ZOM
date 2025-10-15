@@ -118,7 +118,7 @@ const RestaurantDetailsV2: React.FC = () => {
   if (!restaurant) return renderNotFound();
 
   return (
-    <div className="p-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="p-6 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
       {/* Left / main: header + menu */}
       <div className="lg:col-span-2">
         <RestaurantHeader

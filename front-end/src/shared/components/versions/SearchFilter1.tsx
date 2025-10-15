@@ -20,6 +20,7 @@ export const SearchFilterBar = ({ onFilter }: Props) => {
 
   return (
     <div className="mb-6">
+        hi
       {/* Toggle button */}
       <Button
         onClick={() => setOpen(true)}
